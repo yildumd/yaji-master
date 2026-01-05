@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop premium Nigerian spice blends from Yaji Master. Authentic yaji, suya spice, and traditional Nigerian seasonings.">
+    <title>Shop | Yaji Master - Premium Nigerian Spices</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Shop-specific styles kept simple */
+        .shop-header {
+            background: linear-gradient(135deg, rgba(179, 62, 44, 0.85) 0%, rgba(133, 77, 14, 0.85) 100%),
+                        url('images/shop/shop-hero.jpg') center/cover no-repeat;
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .shop-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .shop-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .shop-tools {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem 0;
+            padding: 1rem 0;
+            border-bottom: 2px solid #f5f5f4;
+        }
+        
+        .product-count {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        .product-count span {
+            font-weight: 600;
+            color: #b33e2c;
+        }
+        
+        .shop-filters {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .filter-select {
+            padding: 0.5rem 1rem;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            font-family: 'Inter', sans-serif;
+            min-width: 150px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+        
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+            background: #f5f5f4;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-name {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .product-desc {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        
+        .product-pricing {
+            background: #fef3c7;
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #b33e2c;
+        }
+        
+        .size-selector {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .size-btn {
+            flex: 1;
+            padding: 0.5rem;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        
+        .size-btn.active {
+            border-color: #b33e2c;
+            background: #fef3c7;
+            color: #b33e2c;
+            font-weight: 600;
+        }
+        
+        .size-price {
+            display: block;
+            font-size: 0.9rem;
+            color: #854d0e;
+            margin-top: 0.25rem;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .btn-view-details {
+            flex: 2;
+            background: transparent;
+            color: #b33e2c;
+            border: 2px solid #b33e2c;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-view-details:hover {
+            background: #b33e2c;
+            color: white;
+        }
+        
+        .btn-add-cart {
+            flex: 3;
+            background: #d97706;
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-add-cart:hover {
+            background: #b45309;
+        }
+        
+        .btn-view-details i,
+        .btn-add-cart i {
+            margin-right: 0.5rem;
+        }
+        
+        /* WhatsApp CTA Section */
+        .whatsapp-cta {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.9) 0%, rgba(18, 140, 126, 0.9) 100%),
+                        url('images/shop/whatsapp-cta-bg.jpg') center/cover no-repeat;
+            padding: 60px 0;
+            color: white;
+            margin: 60px 0;
+            border-radius: 12px;
+        }
+        
+        .cta-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .cta-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .cta-text p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 30px;
+            background: white;
+            color: #25D366;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-whatsapp:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .shop-header {
+                padding: 80px 0 40px;
+                margin-top: 70px;
+            }
+            
+            .shop-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .shop-tools {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .shop-filters {
+                width: 100%;
+                flex-direction: column;
+            }
+            
+            .filter-select {
+                width: 100%;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .product-actions {
+                flex-direction: column;
+            }
+            
+            .cta-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 25px;
+            }
+            
+            .whatsapp-cta {
+                padding: 40px 20px;
+                margin: 40px 0;
+            }
+            
+            .cta-text h2 {
+                font-size: 1.6rem;
+            }
+            
+            .cta-text p {
+                font-size: 1rem;
+            }
+            
+            .btn-whatsapp {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Yaji Master Logo" class="logo-img">
+                <span class="logo-text">Yaji Master</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="how-to-use.html">How to Use</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="cart-icon-container">
+                    <a href="#" class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Shop Header -->
+    <header class="shop-header">
+        <div class="container">
+            <h1>Premium Spice Blends</h1>
+            <p>Authentic Nigerian flavors, expertly crafted for your kitchen</p>
+        </div>
+    </header>
+
+    <!-- Shop Content -->
+    <main class="container">
+        <div class="shop-tools">
+            <div class="product-count">
+                Showing <span id="productCount">4</span> products
+            </div>
+            
+            <div class="shop-filters">
+                <select id="sortBy" class="filter-select">
+                    <option value="featured">Sort by: Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name">Name: A to Z</option>
+                </select>
+                
+                <select id="categoryFilter" class="filter-select">
+                    <option value="all">All Products</option>
+                    <option value="spicy">Spicy Blends</option>
+                    <option value="mild">Mild Blends</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be loaded here by JavaScript -->
+        </div>
+    </main>
+
+    <!-- WhatsApp CTA -->
+    <section class="whatsapp-cta">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Need Help Choosing?</h2>
+                    <p>Chat with us on WhatsApp for personalized recommendations.</p>
+                </div>
+                <div class="cta-button">
+                    <a href="https://wa.me/2348164083309?text=Hello%20Yaji%20Master%2C%20I%20need%20help%20choosing%20a%20spice%20blend" class="btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chat with Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo-container">
+                        <a href="index.html" class="footer-logo">
+                            <img src="images/logo-white.png" alt="Yaji Master Logo" class="footer-logo-img">
+                            <span class="footer-logo-text">Yaji Master</span>
+                        </a>
+                    </div>
+                    <p class="footer-description">Premium Nigerian spice blends crafted with tradition, hygiene, and excellence.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="shop.html">All Products</a></li>
+                        <li><a href="product-soulful-heat.html">Soulful Heat</a></li>
+                        <li><a href="product-heritage-fire.html">Heritage Fire</a></li>
+                        <li><a href="product-smoked-suya-heat.html">Smoked Suya Heat</a></li>
+                        <li><a href="product-garlic-gold.html">Garlic Gold</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> hello@yajimaster.com</li>
+                        <li><i class="fas fa-phone"></i> +234 816 408 3309</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Abuja, Nigeria</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Yaji Master. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₦0</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkoutBtn">Proceed to Checkout</button>
+            <a href="https://wa.me/2348164083309?text=Hello%20Yaji%20Master%2C%20I%27d%20like%20to%20place%20an%20order" class="btn btn-whatsapp btn-block" target="_blank">
+                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Shop page JavaScript - Simple and clean
+        document.addEventListener('DOMContentLoaded', function() {
+            // Product data
+            const products = [
+                {
+                    id: 1,
+                    name: "Soulful Heat",
+                    description: "A balanced blend with medium heat and rich flavour. Perfect for everyday meals.",
+                    price100g: 2500,
+                    price200g: 4500,
+                    image: "soulful-heat.jpg",
+                    color: "#b33e2c",
+                    link: "product-soulful-heat.html",
+                    category: "spicy"
+                },
+                {
+                    id: 2,
+                    name: "Heritage Fire",
+                    description: "Traditional suya spice with authentic smoky notes and warm, layered heat.",
+                    price100g: 2800,
+                    price200g: 4800,
+                    image: "heritage-fire.jpg",
+                    color: "#d97706",
+                    link: "product-heritage-fire.html",
+                    category: "spicy"
+                },
+                {
+                    id: 3,
+                    name: "Smoked Suya Heat",
+                    description: "Intense heat with traditional smoking process. Authentic street suya flavor.",
+                    price100g: 3000,
+                    price200g: 5000,
+                    image: "smoked-suya.jpg",
+                    color: "#854d0e",
+                    link: "product-smoked-suya-heat.html",
+                    category: "spicy"
+                },
+                {
+                    id: 4,
+                    name: "Garlic Gold",
+                    description: "Garlic-forward blend with subtle heat and herbs. Family-friendly flavor.",
+                    price100g: 2700,
+                    price200g: 4700,
+                    image: "garlic-gold.jpg",
+                    color: "#d4a574",
+                    link: "product-garlic-gold.html",
+                    category: "mild"
+                }
+            ];
+            
+            // Render products
+            function renderProducts(productsArray) {
+                const productsGrid = document.getElementById('productsGrid');
+                if (!productsGrid) return;
+                
+                let html = '';
+                
+                productsArray.forEach(product => {
+                    html += `
+                        <div class="product-card" data-id="${product.id}" data-category="${product.category}">
+                            <div class="product-image">
+                                <img src="images/products/${product.image}" alt="${product.name}" loading="lazy">
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name">${product.name}</h3>
+                                <p class="product-desc">${product.description}</p>
+                                
+                                <div class="product-pricing">
+                                    <span class="price">₦${product.price100g.toLocaleString('en-NG')} - ₦${product.price200g.toLocaleString('en-NG')}</span>
+                                </div>
+                                
+                                <div class="size-selector">
+                                    <button class="size-btn active" 
+                                        data-price="${product.price100g}"
+                                        data-size="100g">
+                                        100g Bottle
+                                        <span class="size-price">₦${product.price100g.toLocaleString('en-NG')}</span>
+                                    </button>
+                                    <button class="size-btn" 
+                                        data-price="${product.price200g}"
+                                        data-size="200g">
+                                        200g Bottle
+                                        <span class="size-price">₦${product.price200g.toLocaleString('en-NG')}</span>
+                                    </button>
+                                </div>
+                                
+                                <div class="product-actions">
+                                    <a href="${product.link}" class="btn-view-details">
+                                        <i class="fas fa-info-circle"></i> Details
+                                    </a>
+                                    <button class="btn-add-cart add-to-cart" 
+                                        data-id="${product.id}" 
+                                        data-name="${product.name}" 
+                                        data-price="${product.price100g}"
+                                        data-size="100g"
+                                        data-image="${product.image}">
+                                        <i class="fas fa-cart-plus"></i> Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                productsGrid.innerHTML = html;
+                
+                // Initialize size selectors
+                initializeSizeSelectors();
+                
+                // Initialize add to cart buttons
+                initializeAddToCartButtons();
+            }
+            
+            // Initialize size selectors
+            function initializeSizeSelectors() {
+                const sizeButtons = document.querySelectorAll('.size-btn');
+                
+                sizeButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const productCard = this.closest('.product-card');
+                        
+                        // Remove active class from all size buttons in this card
+                        productCard.querySelectorAll('.size-btn').forEach(btn => {
+                            btn.classList.remove('active');
+                        });
+                        
+                        // Add active class to clicked button
+                        this.classList.add('active');
+                        
+                        // Update the add to cart button in this card
+                        const addToCartBtn = productCard.querySelector('.btn-add-cart');
+                        if (addToCartBtn) {
+                            const price = this.getAttribute('data-price');
+                            const size = this.getAttribute('data-size');
+                            
+                            addToCartBtn.setAttribute('data-price', price);
+                            addToCartBtn.setAttribute('data-size', size);
+                            
+                            // Update button text with selected size
+                            addToCartBtn.innerHTML = `<i class="fas fa-cart-plus"></i> Add ${size} to Cart`;
+                        }
+                    });
+                });
+            }
+            
+            // Initialize add to cart buttons
+            function initializeAddToCartButtons() {
+                const addToCartButtons = document.querySelectorAll('.add-to-cart');
+                
+                addToCartButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const id = this.getAttribute('data-id');
+                        const name = this.getAttribute('data-name');
+                        const price = parseFloat(this.getAttribute('data-price'));
+                        const size = this.getAttribute('data-size');
+                        const image = this.getAttribute('data-image');
+                        
+                        // Add to cart using the global cart function
+                        if (window.yajiCart && typeof window.yajiCart.addToCart === 'function') {
+                            window.yajiCart.addToCart({
+                                id: id,
+                                name: name,
+                                price: price,
+                                size: size,
+                                image: image,
+                                quantity: 1
+                            });
+                            
+                            // Show success feedback
+                            showAddToCartFeedback(this);
+                        }
+                    });
+                });
+            }
+            
+            // Show add to cart feedback
+            function showAddToCartFeedback(button) {
+                const originalHtml = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Added!';
+                button.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalHtml;
+                    button.style.background = '';
+                }, 1500);
+            }
+            
+            // Filter products
+            function setupFilters() {
+                const categoryFilter = document.getElementById('categoryFilter');
+                const sortFilter = document.getElementById('sortBy');
+                
+                if (categoryFilter) {
+                    categoryFilter.addEventListener('change', function() {
+                        const category = this.value;
+                        let filteredProducts = products;
+                        
+                        if (category !== 'all') {
+                            filteredProducts = products.filter(product => product.category === category);
+                        }
+                        
+                        renderProducts(filteredProducts);
+                        document.getElementById('productCount').textContent = filteredProducts.length;
+                    });
+                }
+                
+                if (sortFilter) {
+                    sortFilter.addEventListener('change', function() {
+                        const sortValue = this.value;
+                        let sortedProducts = [...products];
+                        
+                        switch(sortValue) {
+                            case 'price-low':
+                                sortedProducts.sort((a, b) => a.price100g - b.price100g);
+                                break;
+                            case 'price-high':
+                                sortedProducts.sort((a, b) => b.price100g - a.price100g);
+                                break;
+                            case 'name':
+                                sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+                                break;
+                            default:
+                                // Featured order - keep as is
+                        }
+                        
+                        renderProducts(sortedProducts);
+                    });
+                }
+            }
+            
+            // Initialize shop
+            function initShop() {
+                // Render products
+                renderProducts(products);
+                
+                // Setup filters
+                setupFilters();
+            }
+            
+            // Initialize shop when DOM is loaded
+            initShop();
+        });
+    </script>
+    
+    <!-- External Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/whatsapp.js"></script>
+    
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yaji Master - Premium Nigerian Spices. Authentic, hygienic, and crafted for the modern kitchen.">
+    <title>Yaji Master | Premium Nigerian Spices</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Enhanced Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('images/hero-bg.jpg') center/cover no-repeat;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #b33e2c 0%, #d97706 100%);
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(179, 62, 44, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #b33e2c;
+        }
+        
+        /* Enhanced Brand Story */
+        .brand-story {
+            padding: 80px 0;
+            background: #fef9f3;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1c1917;
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #78716c;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .story-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+        
+        .story-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* ===== STORY SLIDER ===== */
+        .story-slider {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .slider-container {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        .slider-prev,
+        .slider-next {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b33e2c;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .slider-prev:hover,
+        .slider-next:hover {
+            background: white;
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider-dots {
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #b33e2c;
+            border: 2px solid #b33e2c;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            background: #b33e2c;
+            color: white;
+        }
+        
+        /* Enhanced Featured Products */
+        .featured-products {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .product-image {
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1c1917;
+        }
+        
+        .product-desc {
+            color: #78716c;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        
+        .product-pricing {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #f5f5f4;
+        }
+        
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #b33e2c;
+        }
+        
+        .size {
+            font-size: 0.9rem;
+            color: #78716c;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .size::before {
+            content: "📦";
+        }
+        
+        .btn-small {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-small:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 165, 116, 0.4);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Enhanced Value Propositions */
+        .value-props {
+            padding: 80px 0;
+            background: #fef9f3;
+        }
+        
+        .props-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .prop-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .prop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .prop-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+            color: #b45309;
+        }
+        
+        .prop-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #1c1917;
+        }
+        
+        .prop-card p {
+            color: #78716c;
+            line-height: 1.6;
+        }
+        
+        /* Enhanced Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background: #fef9f3;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            border-left: 4px solid #d97706;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 4rem;
+            font-family: 'Playfair Display', serif;
+            color: rgba(212, 165, 116, 0.2);
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #f5f5f4;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fde68a;
+        }
+        
+        .author-info h4 {
+            margin: 0;
+            color: #1c1917;
+            font-size: 1.1rem;
+        }
+        
+        .author-info p {
+            margin: 0;
+            color: #78716c;
+            font-size: 0.9rem;
+        }
+        
+        /* Enhanced WhatsApp CTA */
+        .whatsapp-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+        }
+        
+        .cta-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            gap: 2rem;
+        }
+        
+        .cta-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-text p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 500px;
+        }
+        
+        .btn-whatsapp {
+            background: white;
+            color: #25D366;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .btn-whatsapp:hover {
+            background: #f5f5f5;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .story-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .cta-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cta-text h2 {
+                font-size: 1.8rem;
+            }
+            
+            .slider-container {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 0 60px;
+                margin-top: 70px;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .slider-container {
+                height: 300px;
+            }
+            
+            .slide-caption {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .prop-card {
+                padding: 1.5rem;
+            }
+            
+            .slider-container {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Yaji Master Logo" class="logo-img">
+                <span class="logo-text">Yaji Master</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="how-to-use.html">How to Use</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="cart-icon-container">
+                    <a href="#" class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Master the Art of Nigerian Flavour</h1>
+                <p class="hero-subtitle">Premium, hygienically crafted spice blends that bring authentic West African taste to your kitchen.</p>
+                <div class="hero-buttons">
+                    <a href="shop.html" class="btn btn-primary">
+                        <i class="fas fa-shopping-bag"></i> Shop Now
+                    </a>
+                    <a href="#story" class="btn btn-secondary">
+                        <i class="fas fa-book-open"></i> Our Story
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Brand Story -->
+    <section class="brand-story" id="story">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Yaji Master Story</h2>
+                <p class="section-subtitle">Where tradition meets modern culinary excellence</p>
+            </div>
+            <div class="story-content">
+                <div class="story-text">
+                    <p>Yaji Master was born from a passion to share the authentic, complex flavours of Nigerian cuisine with the world. Our founder, a third-generation spice merchant from Kano, noticed a gap in the market for premium, hygienically packaged Nigerian spices that maintained traditional recipes while meeting international food safety standards.</p>
+                    <p>Each blend is crafted in our state-certified facility, where traditional knowledge meets modern food science. We source directly from Nigerian farmers, ensuring fair trade and the freshest ingredients possible.</p>
+                    <a href="about.html" class="btn-outline">
+                        <i class="fas fa-arrow-right"></i> Learn More About Us
+                    </a>
+                </div>
+                <!-- SLIDER REPLACEMENT -->
+                <div class="story-slider">
+                    <div class="slider-container">
+                        <div class="slider-track">
+                            <div class="slide">
+                                <img src="images/about-story.jpg" alt="Yaji Master spices being prepared" loading="lazy">
+                                <div class="slide-caption">Handcrafted with traditional techniques</div>
+                            </div>
+                            <div class="slide">
+                                <img src="images/products/heritage-fire.jpg" alt="Quality ingredients selection" loading="lazy">
+                                <div class="slide-caption">Premium quality ingredients</div>
+                            </div>
+                            <div class="slide">
+                                <img src="images/products/garlic-gold.jpg" alt="Hygienic packaging process" loading="lazy">
+                                <div class="slide-caption">Hygienic packaging for freshness</div>
+                            </div>
+                        </div>
+                        <div class="slider-controls">
+                            <button class="slider-prev">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div class="slider-dots">
+                                <span class="dot active" data-slide="0"></span>
+                                <span class="dot" data-slide="1"></span>
+                                <span class="dot" data-slide="2"></span>
+                            </div>
+                            <button class="slider-next">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Signature Blends</h2>
+                <p class="section-subtitle">Carefully crafted for authentic taste</p>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1: Garlic Gold -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/garlic-gold.jpg" alt="Garlic Gold Spice Blend" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Garlic Gold</h3>
+                        <p class="product-desc">Garlic-forward blend with subtle heat and herbs. Perfect for those who prefer milder spice with rich garlic flavor.</p>
+                        <div class="product-pricing">
+                            <span class="price">₦2,700 - ₦4,700</span>
+                            <span class="size">100g | 200g</span>
+                        </div>
+                        <a href="product-garlic-gold.html" class="btn-small">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Product 2: Heritage Fire -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/heritage-fire.jpg" alt="Heritage Fire Spice Blend" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Heritage Fire</h3>
+                        <p class="product-desc">Traditional suya spice with authentic smoky notes. The classic Nigerian street flavor everyone loves.</p>
+                        <div class="product-pricing">
+                            <span class="price">₦2,800 - ₦4,800</span>
+                            <span class="size">100g | 200g</span>
+                        </div>
+                        <a href="product-heritage-fire.html" class="btn-small">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Product 3: Smoked Suya Heat -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/smoked-suya.jpg" alt="Smoked Suya Heat Spice Blend" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Smoked Suya Heat</h3>
+                        <p class="product-desc">Intense heat with traditional smoking process. For those who love authentic street suya flavor with extra kick.</p>
+                        <div class="product-pricing">
+                            <span class="price">₦3,000 - ₦5,000</span>
+                            <span class="size">100g | 200g</span>
+                        </div>
+                        <a href="product-smoked-suya-heat.html" class="btn-small">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="shop.html" class="btn btn-primary" style="padding: 1rem 3rem;">
+                    <i class="fas fa-store"></i> View All Products
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Propositions -->
+    <section class="value-props">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Yaji Master</h2>
+                <p class="section-subtitle">What sets our spices apart from the rest</p>
+            </div>
+            <div class="props-grid">
+                <div class="prop-card">
+                    <div class="prop-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>Sourced directly from Nigerian farms, hand-selected for freshness and potency.</p>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Hygienic Processing</h3>
+                    <p>State-certified facility with strict hygiene protocols and quality control.</p>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h3>Export Ready</h3>
+                    <p>Packaged to international standards for diaspora customers worldwide.</p>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Nationwide Delivery</h3>
+                    <p>Reliable delivery across Nigeria with international shipping options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Loved by Home Cooks & Chefs</h2>
+                <p class="section-subtitle">What our customers are saying</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Yaji Master transformed my suya game! The Heritage Fire blend is exactly like what I grew up eating in Lagos. Now my family requests suya every weekend!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonials/amina.jpg" alt="Amina B." class="author-img" loading="lazy">
+                        <div class="author-info">
+                            <h4>Amina B.</h4>
+                            <p>Lagos, Nigeria</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Living in the UK, I've struggled for years to find authentic Nigerian spices. Yaji Master delivers the real taste of home. My kitchen smells like Nigeria again!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonials/chukwuemeka.jpg" alt="Chukwuemeka O." class="author-img" loading="lazy">
+                        <div class="author-info">
+                            <h4>Chukwuemeka O.</h4>
+                            <p>London, UK</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"The quality and hygiene standards are exceptional. As a mother, I feel confident using these spices for my family. The packaging keeps everything fresh!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonials/funke.jpg" alt="Funke A." class="author-img" loading="lazy">
+                        <div class="author-info">
+                            <h4>Funke A.</h4>
+                            <p>Abuja, Nigeria</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp CTA -->
+    <section class="whatsapp-cta">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Ready to Order?</h2>
+                    <p>Chat with us directly on WhatsApp for instant ordering, custom orders, and inquiries about our products.</p>
+                </div>
+                <div class="cta-button">
+                    <a href="https://wa.me/2348164083309?text=Hello%20Yaji%20Master%2C%20I%27d%20like%20to%20place%20an%20order" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo-container">
+                        <a href="index.html" class="footer-logo">
+                            <!-- Temporary fix: Use regular logo with CSS filter -->
+                            <img src="images/logo.png" alt="Yaji Master Logo" class="footer-logo-img" style="filter: brightness(0) invert(1);">
+                            <span class="footer-logo-text">Yaji Master</span>
+                        </a>
+                    </div>
+                    <p class="footer-description">Premium Nigerian spice blends crafted with tradition, hygiene, and excellence.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop All</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="how-to-use.html">Recipes</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> hello@yajimaster.com</li>
+                        <li><i class="fas fa-phone"></i> +234 816 408 3309</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Abuja, Nigeria</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Yaji Master. All rights reserved.</p>
+                <p>Designed with <i class="fas fa-heart"></i> in Nigeria</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be inserted here by JavaScript -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+                <a href="shop.html" class="btn btn-outline">Continue Shopping</a>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₦0</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkoutBtn">Proceed to Checkout</button>
+            <a href="https://wa.me/2348164983309?text=Hello%20Yaji%20Master%2C%20I%27d%20like%20to%20place%20an%20order" class="btn btn-whatsapp btn-block" target="_blank">
+                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/whatsapp.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Story Slider Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const sliderTrack = document.querySelector('.slider-track');
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.querySelector('.slider-prev');
+            const nextBtn = document.querySelector('.slider-next');
+            
+            if (!sliderTrack || slides.length === 0) return;
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            
+            function updateSlider() {
+                // Update slider track position
+                sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+            
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
+            }
+            
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlider();
+            }
+            
+            // Event listeners for buttons
+            if (nextBtn) {
+                nextBtn.addEventListener('click', nextSlide);
+            }
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', prevSlide);
+            }
+            
+            // Event listeners for dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateSlider();
+                });
+            });
+            
+            // Auto-slide every 5 seconds
+            let slideInterval = setInterval(nextSlide, 5000);
+            
+            // Pause auto-slide on hover
+            const sliderContainer = document.querySelector('.slider-container');
+            if (sliderContainer) {
+                sliderContainer.addEventListener('mouseenter', () => {
+                    clearInterval(slideInterval);
+                });
+                
+                sliderContainer.addEventListener('mouseleave', () => {
+                    slideInterval = setInterval(nextSlide, 5000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

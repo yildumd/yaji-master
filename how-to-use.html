@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to use Yaji Master spice blends with recipes, cooking tips, and creative ideas for Nigerian spices in your kitchen.">
+    <title>Recipes & How to Use | Yaji Master - Premium Nigerian Spices</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* How to Use Page Specific Styles */
+        .recipes-header {
+            background: linear-gradient(135deg, rgba(179, 62, 44, 0.9) 0%, rgba(217, 119, 6, 0.9) 100%),
+                        url('images/how-to-use/chef-hero.jpg') center/cover no-repeat;
+            color: white;
+            padding: 140px 0 80px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .recipes-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .recipes-header p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        /* Blend Usage Section */
+        .blend-usage-section {
+            padding: 100px 0;
+            background: #fef9f3;
+        }
+        
+        .blend-usage-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-left: 6px solid;
+        }
+        
+        .blend-usage-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+        }
+        
+        .blend-usage-header {
+            padding: 30px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .blend-usage-header.soulful { 
+            background: linear-gradient(135deg, #b33e2c 0%, #c85c3e 100%);
+            border-color: #b33e2c;
+        }
+        
+        .blend-usage-header.heritage { 
+            background: linear-gradient(135deg, #d97706 0%, #e69138 100%);
+            border-color: #d97706;
+        }
+        
+        .blend-usage-header.smoked { 
+            background: linear-gradient(135deg, #854d0e 0%, #9c6c2e 100%);
+            border-color: #854d0e;
+        }
+        
+        .blend-usage-header.garlic { 
+            background: linear-gradient(135deg, #d4a574 0%, #e6b98a 100%);
+            border-color: #d4a574;
+        }
+        
+        .blend-icon-large {
+            font-size: 3.5rem;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .blend-header-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .blend-header-content p {
+            opacity: 0.9;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .blend-header-content .best-for {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .blend-usage-content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .usage-ideas, .content-angle {
+            background: #fef9f3;
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #fde68a;
+        }
+        
+        .usage-ideas h4, .content-angle h4 {
+            color: #b45309;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #fde68a;
+        }
+        
+        .usage-ideas h4 i, .content-angle h4 i {
+            background: #fde68a;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #854d0e;
+        }
+        
+        .usage-ideas ul, .content-angle ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .usage-ideas li, .content-angle li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(253, 230, 138, 0.5);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .usage-ideas li:last-child, .content-angle li:last-child {
+            border-bottom: none;
+        }
+        
+        .usage-ideas li strong, .content-angle li strong {
+            color: #b33e2c;
+            font-weight: 600;
+        }
+        
+        .content-angle p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        
+        .content-angle strong {
+            color: #b33e2c;
+            font-weight: 600;
+        }
+        
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: transparent;
+            color: #b33e2c;
+            border: 2px solid #b33e2c;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+        
+        .btn-outline:hover {
+            background: #b33e2c;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(179, 62, 44, 0.2);
+        }
+        
+        /* Quick Mix Section */
+        .quick-mix-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1c1917 0%, #2d2724 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .quick-mix-header {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .quick-mix-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .quick-mix-header p {
+            font-size: 1.2rem;
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+        
+        .quick-mix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .quick-mix-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 35px 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(253, 230, 138, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quick-mix-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #d4a574 0%, #d97706 100%);
+        }
+        
+        .quick-mix-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-8px);
+            border-color: rgba(253, 230, 138, 0.4);
+        }
+        
+        .quick-mix-card h3 {
+            color: #fde68a;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .quick-mix-card p {
+            color: #d1d5db;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        
+        .quick-mix-card strong {
+            color: #fde68a;
+            font-weight: 600;
+        }
+        
+        .quick-mix-card em {
+            color: #d4a574;
+            font-style: italic;
+            display: block;
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .recipe-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            text-align: center;
+        }
+        
+        .recipe-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1c1917;
+        }
+        
+        .recipe-cta p {
+            font-size: 1.2rem;
+            color: #854d0e;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #b33e2c 0%, #d97706 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(179, 62, 44, 0.3);
+        }
+        
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 40px;
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .blend-usage-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .quick-mix-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .recipes-header {
+                padding: 120px 0 60px;
+                margin-top: 70px;
+            }
+            
+            .recipes-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .recipes-header p {
+                font-size: 1.1rem;
+            }
+            
+            .blend-usage-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .blend-icon-large {
+                font-size: 2.8rem;
+            }
+            
+            .blend-header-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .blend-usage-content {
+                padding: 25px;
+            }
+            
+            .usage-ideas, .content-angle {
+                padding: 25px;
+            }
+            
+            .quick-mix-header h2,
+            .recipe-cta h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary,
+            .btn-whatsapp,
+            .btn-outline {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .recipes-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blend-usage-header {
+                padding: 20px;
+            }
+            
+            .quick-mix-card {
+                padding: 25px 20px;
+            }
+            
+            .recipe-cta h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Yaji Master Logo" class="logo-img">
+                <span class="logo-text">Yaji Master</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="how-to-use.html" class="active">How to Use</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="cart-icon-container">
+                    <a href="#" class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Recipe Hero -->
+    <header class="recipes-header">
+        <div class="container">
+            <h1>Master Your Kitchen with Yaji</h1>
+            <p>Simple ideas to transform everyday meals. No complexity, just incredible flavor.</p>
+        </div>
+    </header>
+
+    <!-- Blend Usage Guides -->
+    <section class="blend-usage-section">
+        <div class="container">
+            <!-- SOULFUL HEAT -->
+            <div class="blend-usage-card">
+                <div class="blend-usage-header soulful">
+                    <span class="blend-icon-large">🌶️</span>
+                    <div class="blend-header-content">
+                        <h2>SOULFUL HEAT</h2>
+                        <p><em>Balanced, Everyday Yaji</em></p>
+                        <div class="best-for">
+                            <i class="fas fa-fire"></i>
+                            <span>Best for: Daily meals, snacks, light grilling</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="blend-usage-content">
+                    <div class="usage-ideas">
+                        <h4><i class="fas fa-utensils"></i> How to Use</h4>
+                        <ul>
+                            <li>🌸 <strong>Sprinkle</strong> on grilled chicken, turkey, or fish</li>
+                            <li>🍲 <strong>Mix</strong> into stew or sauce for extra warmth</li>
+                            <li>🍳 <strong>Add</strong> to fried eggs or omelette</li>
+                            <li>🍟 <strong>Season</strong> fries, plantain, or yam</li>
+                            <li>🍿 <strong>Light dusting</strong> on popcorn or roasted groundnuts</li>
+                        </ul>
+                    </div>
+                    <div class="content-angle">
+                        <h4><i class="fas fa-quote-left"></i> Why You'll Love It</h4>
+                        <p><strong>"One spice, many meals."</strong></p>
+                        <p>This is your kitchen workhorse. Soulful Heat is versatile enough for breakfast eggs, lunchtime stew, and evening snacks. The balanced heat won't overwhelm delicate dishes, while the citrus note keeps things interesting.</p>
+                        <a href="product-soulful-heat.html" class="btn-outline">
+                            <i class="fas fa-shopping-cart"></i> Shop Soulful Heat
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HERITAGE FIRE -->
+            <div class="blend-usage-card">
+                <div class="blend-usage-header heritage">
+                    <span class="blend-icon-large">🔥</span>
+                    <div class="blend-header-content">
+                        <h2>HERITAGE FIRE</h2>
+                        <p><em>Aromatic, Traditional</em></p>
+                        <div class="best-for">
+                            <i class="fas fa-home"></i>
+                            <span>Best for: Hearty meals, soups, traditional dishes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="blend-usage-content">
+                    <div class="usage-ideas">
+                        <h4><i class="fas fa-utensils"></i> How to Use</h4>
+                        <ul>
+                            <li>🍲 <strong>Add</strong> to pepper soup (goat, chicken, fish)</li>
+                            <li>🥘 <strong>Mix</strong> into stew base for depth</li>
+                            <li>🥩 <strong>Rub</strong> on meat before boiling or grilling</li>
+                            <li>🍚 <strong>Add</strong> to rice dishes for warmth</li>
+                            <li>🫘 <strong>Season</strong> beans or lentils</li>
+                        </ul>
+                    </div>
+                    <div class="content-angle">
+                        <h4><i class="fas fa-quote-left"></i> Why You'll Love It</h4>
+                        <p><strong>"The taste of home."</strong></p>
+                        <p>This blend carries memory. Use Heritage Fire when you want that deep, traditional flavor—the kind that reminds you of family kitchens and special occasions. The layered heat and aromatic spices stand up to long cooking times.</p>
+                        <a href="product-heritage-fire.html" class="btn-outline">
+                            <i class="fas fa-shopping-cart"></i> Shop Heritage Fire
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SMOKED SUYA HEAT -->
+            <div class="blend-usage-card">
+                <div class="blend-usage-header smoked">
+                    <span class="blend-icon-large">🌫️</span>
+                    <div class="blend-header-content">
+                        <h2>SMOKED SUYA HEAT</h2>
+                        <p><em>Authentic Suya Flavor</em></p>
+                        <div class="best-for">
+                            <i class="fas fa-utensils"></i>
+                            <span>Best for: Grills, barbecues, outdoor cooking</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="blend-usage-content">
+                    <div class="usage-ideas">
+                        <h4><i class="fas fa-utensils"></i> How to Use</h4>
+                        <ul>
+                            <li>🥩 <strong>Rub generously</strong> on suya beef or chicken</li>
+                            <li>🐟 <strong>Sprinkle</strong> on grilled fish or prawns</li>
+                            <li>🧂 <strong>Mix with oil</strong> for barbecue marinade</li>
+                            <li>🌽 <strong>Season</strong> roasted corn or potatoes</li>
+                            <li>🍔 <strong>Add</strong> to burgers or wraps</li>
+                        </ul>
+                    </div>
+                    <div class="content-angle">
+                        <h4><i class="fas fa-quote-left"></i> Why You'll Love It</h4>
+                        <p><strong>"Bring suya home."</strong></p>
+                        <p>That smoky, street-food aroma is now in your kitchen. This blend is for when you want to impress—weekend grills, friends over, or when you're craving authentic suya. The smoked chilli and sesame create that unmistakable character.</p>
+                        <a href="product-smoked-suya-heat.html" class="btn-outline">
+                            <i class="fas fa-shopping-cart"></i> Shop Smoked Suya Heat
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GARLIC GOLD -->
+            <div class="blend-usage-card">
+                <div class="blend-usage-header garlic">
+                    <span class="blend-icon-large">🧄</span>
+                    <div class="blend-header-content">
+                        <h2>GARLIC GOLD</h2>
+                        <p><em>Savory, Umami-Rich</em></p>
+                        <div class="best-for">
+                            <i class="fas fa-users"></i>
+                            <span>Best for: Cooking, family meals, diaspora kitchens</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="blend-usage-content">
+                    <div class="usage-ideas">
+                        <h4><i class="fas fa-utensils"></i> How to Use</h4>
+                        <ul>
+                            <li>🍝 <strong>Stir into</strong> pasta, noodles, or stir-fries</li>
+                            <li>🥦 <strong>Season</strong> roasted vegetables</li>
+                            <li>🍲 <strong>Add to</strong> soups and sauces</li>
+                            <li>🍚 <strong>Sprinkle on</strong> fried rice or jollof</li>
+                            <li>🧈 <strong>Mix with butter</strong> for garlic spread</li>
+                        </ul>
+                    </div>
+                    <div class="content-angle">
+                        <h4><i class="fas fa-quote-left"></i> Why You'll Love It</h4>
+                        <p><strong>"Flavor without stress."</strong></p>
+                        <p>Garlic Gold is your secret weapon for adding depth without intense heat. Perfect for family cooking where not everyone loves spice, and excellent for diaspora kitchens introducing Nigerian flavors gradually. The herbs make it universally appealing.</p>
+                        <a href="product-garlic-gold.html" class="btn-outline">
+                            <i class="fas fa-shopping-cart"></i> Shop Garlic Gold
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Mix Ideas -->
+    <section class="quick-mix-section">
+        <div class="container">
+            <div class="quick-mix-header">
+                <h2>Quick Mix Ideas</h2>
+                <p>Simple, viral-ready concepts to share with your community</p>
+            </div>
+            
+            <div class="quick-mix-grid">
+                <div class="quick-mix-card">
+                    <h3>1️⃣ Yaji Oil</h3>
+                    <p><strong>Mix:</strong> 2 tbsp Yaji + ½ cup vegetable oil</p>
+                    <p><strong>Use as:</strong> Finishing oil drizzled over grilled meat, rice, or vegetables. Shake well before use.</p>
+                    <em>Perfect for Instagram reels!</em>
+                </div>
+                <div class="quick-mix-card">
+                    <h3>2️⃣ Yaji Marinade</h3>
+                    <p><strong>Mix:</strong> 3 tbsp Yaji + ¼ cup oil + 2 tbsp onion paste</p>
+                    <p><strong>Use as:</strong> Marinate chicken or fish for 30 mins before grilling or frying.</p>
+                    <em>Guaranteed flavor in minutes.</em>
+                </div>
+                <div class="quick-mix-card">
+                    <h3>3️⃣ Yaji Sprinkle</h3>
+                    <p><strong>Method:</strong> Direct sprinkle after cooking.</p>
+                    <p><strong>Best on:</strong> Freshly cooked rice, soups, fried plantains, or roasted nuts.</p>
+                    <em>Enhances aroma instantly—no cooking needed.</em>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe CTA -->
+    <section class="recipe-cta">
+        <div class="container">
+            <h2>Ready to Create Amazing Meals?</h2>
+            <p>Start your flavor journey with our premium spice blends and transform your cooking experience.</p>
+            <div class="cta-buttons">
+                <a href="shop.html" class="btn-primary">
+                    <i class="fas fa-shopping-bag"></i> Get Your Blends Now
+                </a>
+                <a href="https://wa.me/2348164083309?text=Hello%20Yaji%20Master!%20I%20need%20recipe%20ideas%20for..." class="btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Ask for More Recipes
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo-container">
+                        <a href="index.html" class="footer-logo">
+                            <img src="images/logo-white.png" alt="Yaji Master Logo" class="footer-logo-img">
+                            <span class="footer-logo-text">Yaji Master</span>
+                        </a>
+                    </div>
+                    <p class="footer-description">Premium Nigerian spice blends crafted with tradition, hygiene, and excellence.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="shop.html">All Products</a></li>
+                        <li><a href="product-soulful-heat.html">Soulful Heat</a></li>
+                        <li><a href="product-heritage-fire.html">Heritage Fire</a></li>
+                        <li><a href="product-smoked-suya-heat.html">Smoked Suya Heat</a></li>
+                        <li><a href="product-garlic-gold.html">Garlic Gold</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Learn</h4>
+                    <ul>
+                        <li><a href="how-to-use.html">Recipes & Usage</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="#">Cooking Tips</a></li>
+                        <li><a href="#">Storage Guide</a></li>
+                        <li><a href="#">Spice Pairings</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> hello@yajimaster.com</li>
+                        <li><i class="fas fa-phone"></i> +234 816 408 3309</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Abuja, Nigeria</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Yaji Master. All rights reserved.</p>
+                <p>Designed with <i class="fas fa-heart"></i> in Nigeria</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be inserted here by JavaScript -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+                <a href="shop.html" class="btn btn-outline">Continue Shopping</a>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₦0</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkoutBtn">Proceed to Checkout</button>
+            <a href="https://wa.me/2348164983309?text=Hello%20Yaji%20Master%2C%20I%27d%20like%20to%20place%20an%20order" class="btn btn-whatsapp btn-block" target="_blank">
+                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/whatsapp.js"></script>
+    
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

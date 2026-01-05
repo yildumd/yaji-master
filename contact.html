@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Yaji Master for orders, inquiries, and support. We're here to help you spice up your meals with authentic Nigerian flavors.">
+    <title>Contact Us | Yaji Master - Premium Nigerian Spices</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-header {
+            background: linear-gradient(135deg, rgba(179, 62, 44, 0.9) 0%, rgba(133, 77, 14, 0.9) 100%),
+                        url('images/contact-hero.jpg') center/cover no-repeat;
+            color: white;
+            padding: 140px 0 80px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .contact-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .contact-header p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            padding: 100px 0;
+        }
+        
+        /* Contact Information */
+        .contact-info-card {
+            background: #fef9f3;
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid #fde68a;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .contact-info-card h2 {
+            font-size: 2.2rem;
+            color: #1c1917;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #fde68a;
+            font-weight: 700;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(253, 230, 138, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-method:hover {
+            transform: translateX(10px);
+        }
+        
+        .contact-method:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            font-size: 1.5rem;
+            color: #b33e2c;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h3 {
+            font-size: 1.4rem;
+            color: #1c1917;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .contact-details p {
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+        
+        .contact-details strong {
+            color: #b33e2c;
+            font-weight: 600;
+        }
+        
+        .btn-small {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: #b33e2c;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .btn-small:hover {
+            background: #9a2f1f;
+            transform: translateY(-2px);
+        }
+        
+        /* WhatsApp Direct */
+        .whatsapp-direct {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.2);
+        }
+        
+        .whatsapp-direct h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .whatsapp-direct p {
+            opacity: 0.9;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 40px;
+            background: white;
+            color: #25D366;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #f5f5f5;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Map Section */
+        .map-section {
+            margin-top: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-placeholder {
+            height: 300px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #854d0e;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .map-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #b33e2c;
+        }
+        
+        .map-placeholder p {
+            font-size: 1.1rem;
+            margin: 5px 0;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid #f5f5f4;
+        }
+        
+        .contact-form h2 {
+            font-size: 2.2rem;
+            color: #1c1917;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .contact-form > p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #444;
+            font-size: 1rem;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f9fafb;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #d4a574;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            margin-top: 10px;
+        }
+        
+        .btn-submit {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #b33e2c 0%, #d97706 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(179, 62, 44, 0.3);
+        }
+        
+        .btn-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Success Message */
+        .form-success {
+            display: none;
+            padding: 25px;
+            background: #d1fae5;
+            color: #065f46;
+            border-radius: 12px;
+            margin-top: 25px;
+            border: 2px solid #a7f3d0;
+            text-align: center;
+        }
+        
+        .form-success i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .form-success p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 40px;
+            padding: 40px;
+            background: #fef9f3;
+            border-radius: 20px;
+            border: 2px solid #fde68a;
+        }
+        
+        .faq-section h3 {
+            font-size: 1.8rem;
+            color: #1c1917;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .faq-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(253, 230, 138, 0.5);
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .faq-item h4 {
+            font-size: 1.2rem;
+            color: #b33e2c;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .faq-item p {
+            color: #444;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: transparent;
+            color: #b33e2c;
+            border: 2px solid #b33e2c;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .btn-outline:hover {
+            background: #b33e2c;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .contact-header h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-header {
+                padding: 120px 0 60px;
+                margin-top: 70px;
+            }
+            
+            .contact-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-header p {
+                font-size: 1.1rem;
+            }
+            
+            .contact-info-card,
+            .contact-form,
+            .faq-section,
+            .whatsapp-direct {
+                padding: 30px;
+            }
+            
+            .contact-method {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .contact-icon {
+                margin-bottom: 15px;
+            }
+            
+            .contact-form h2,
+            .contact-info-card h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-info-card,
+            .contact-form,
+            .faq-section,
+            .whatsapp-direct {
+                padding: 25px 20px;
+            }
+            
+            .btn-primary,
+            .btn-submit,
+            .btn-outline,
+            .btn-small {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Yaji Master Logo" class="logo-img">
+                <span class="logo-text">Yaji Master</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="how-to-use.html">How to Use</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li class="cart-icon-container">
+                    <a href="#" class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Header -->
+    <header class="contact-header">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p>We're here to help you spice up your story! Reach out for orders, questions, or partnership opportunities.</p>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-info-card">
+                        <h2>Contact Information</h2>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Phone & WhatsApp</h3>
+                                <p><strong>+234 816 408 3309</strong></p>
+                                <p>Available Monday-Saturday, 9AM-6PM</p>
+                                <a href="https://wa.me/2348164083309" class="btn-small" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Chat Now
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p><strong>hello@yajimaster.com</strong></p>
+                                <p>For general inquiries and wholesale orders</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Location</h3>
+                                <p><strong>Kubwa, Abuja</strong></p>
+                                <p>Federal Capital Territory, Nigeria</p>
+                                <p><em>Note: We're an online store with pickup available in Kubwa area</em></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Business Hours</h3>
+                                <p><strong>Monday - Saturday:</strong> 9:00 AM - 6:00 PM</p>
+                                <p><strong>Sunday:</strong> 12:00 PM - 4:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- WhatsApp Direct -->
+                    <div class="whatsapp-direct">
+                        <h3><i class="fab fa-whatsapp"></i> Fastest Way to Reach Us</h3>
+                        <p>For instant order placement or quick questions, message us directly on WhatsApp.</p>
+                        <a href="https://wa.me/2348164083309" class="btn-primary" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Message on WhatsApp
+                        </a>
+                    </div>
+                    
+                    <!-- Map Section -->
+                    <div class="map-section">
+                        <div class="map-placeholder">
+                            <div>
+                                <i class="fas fa-map-marked-alt"></i>
+                                <p><strong>Kubwa, Abuja Location</strong></p>
+                                <p>Pickup available by appointment</p>
+                                <p><small>Exact location shared upon confirmed order</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <div class="contact-form">
+                        <h2>Send Us a Message</h2>
+                        <p>Have questions about our blends, need cooking advice, or want to discuss wholesale? Fill out the form below.</p>
+                        
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="Your full name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number (with WhatsApp)</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+234 xxx xxx xxxx">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a topic</option>
+                                    <option value="order">Order Inquiry</option>
+                                    <option value="product">Product Questions</option>
+                                    <option value="recipe">Recipe Advice</option>
+                                    <option value="wholesale">Wholesale/Bulk Orders</option>
+                                    <option value="partnership">Partnership Opportunity</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Your Message *</label>
+                                <textarea id="message" name="message" required placeholder="Tell us how we can help you..."></textarea>
+                            </div>
+                            
+                            <div class="form-submit">
+                                <button type="submit" class="btn-submit">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <div id="formSuccess" class="form-success">
+                            <i class="fas fa-check-circle"></i>
+                            <p><strong>Message sent successfully!</strong></p>
+                            <p>We'll respond within 24 hours. You can also reach us directly via WhatsApp for faster response.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Section -->
+                    <div class="faq-section">
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="faq-item">
+                            <h4>Do you deliver outside Abuja?</h4>
+                            <p>Yes! We deliver nationwide in Nigeria via courier services. International shipping to diaspora customers is also available.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>How long does delivery take?</h4>
+                            <p>Abuja: Same-day for orders before 3PM. Other cities: 2-4 business days via courier.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Can I pay on delivery?</h4>
+                            <p>Yes, cash on delivery is available for Abuja orders. Other cities require prepayment via bank transfer.</p>
+                        </div>
+                        <a href="#" class="btn-outline">View Full FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo-container">
+                        <a href="index.html" class="footer-logo">
+                            <img src="images/logo-white.png" alt="Yaji Master Logo" class="footer-logo-img">
+                            <span class="footer-logo-text">Yaji Master</span>
+                        </a>
+                    </div>
+                    <p class="footer-description">Premium Nigerian spice blends crafted with tradition, hygiene, and excellence.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="shop.html">All Products</a></li>
+                        <li><a href="product-soulful-heat.html">Soulful Heat</a></li>
+                        <li><a href="product-heritage-fire.html">Heritage Fire</a></li>
+                        <li><a href="product-smoked-suya-heat.html">Smoked Suya Heat</a></li>
+                        <li><a href="product-garlic-gold.html">Garlic Gold</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> hello@yajimaster.com</li>
+                        <li><i class="fas fa-phone"></i> +234 816 408 3309</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Kubwa, Abuja, Nigeria</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Yaji Master. All rights reserved.</p>
+                <p>Designed with <i class="fas fa-heart"></i> in Nigeria</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be inserted here by JavaScript -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+                <a href="shop.html" class="btn btn-outline">Continue Shopping</a>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₦0</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkoutBtn">Proceed to Checkout</button>
+            <a href="https://wa.me/2348164983309?text=Hello%20Yaji%20Master%2C%20I%27d%20like%20to%20place%20an%20order" class="btn btn-whatsapp btn-block" target="_blank">
+                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/whatsapp.js"></script>
+    
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Contact form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const formSuccess = document.getElementById('formSuccess');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData);
+                    
+                    // Create WhatsApp message from form
+                    const message = `New contact form submission:%0A%0A` +
+                                   `Name: ${data.name}%0A` +
+                                   `Email: ${data.email}%0A` +
+                                   `Phone: ${data.phone || 'Not provided'}%0A` +
+                                   `Subject: ${data.subject}%0A` +
+                                   `Message: ${data.message}`;
+                    
+                    // Show success message
+                    formSuccess.style.display = 'block';
+                    contactForm.reset();
+                    
+                    // Scroll to success message
+                    formSuccess.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Optionally send to WhatsApp (uncomment if needed)
+                    // setTimeout(() => {
+                    //     window.open(`https://wa.me/2348164083309?text=${message}`, '_blank');
+                    // }, 1000);
+                    
+                    // Hide success message after 10 seconds
+                    setTimeout(() => {
+                        formSuccess.style.display = 'none';
+                    }, 10000);
+                });
+            }
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
