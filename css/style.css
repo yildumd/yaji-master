@@ -201,7 +201,7 @@ a:hover {
     color: white;
 }
 
-/* ===== NAVIGATION - UPDATED FOR MOBILE ===== */
+/* ===== NAVIGATION - DESKTOP ONLY ===== */
 .navbar {
     background-color: var(--white);
     box-shadow: var(--shadow-sm);
@@ -246,7 +246,7 @@ a:hover {
     line-height: 1;
 }
 
-/* DEFAULT DESKTOP NAV MENU */
+/* DEFAULT DESKTOP NAV MENU - Mobile styles are in responsive.css */
 .nav-menu {
     display: flex;
     list-style: none;
@@ -309,183 +309,15 @@ a:hover {
 }
 
 .menu-toggle {
-    display: none;
+    display: none; /* Hidden by default, shown in responsive.css */
     background: none;
     border: none;
     font-size: 1.5rem;
     color: var(--dark-color);
     cursor: pointer;
     padding: 5px;
-    z-index: 1001;
 }
 
-/* ===== MOBILE RESPONSIVE STYLES - FIXED ===== */
-
-/* Tablets and smaller (max-width: 992px) */
-@media (max-width: 992px) {
-    .hero-title {
-        font-size: 2.8rem;
-    }
-    
-    .story-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .cta-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .cta-text h2 {
-        font-size: 1.8rem;
-    }
-    
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-}
-
-/* Mobile devices (max-width: 768px) - CRITICAL FIXES HERE */
-@media (max-width: 768px) {
-    /* Show the menu toggle button */
-    .menu-toggle {
-        display: block;
-        order: 2;
-    }
-    
-    /* Position the cart icon correctly */
-    .cart-icon-container {
-        order: 1;
-        margin-left: auto;
-        margin-right: 15px;
-    }
-    
-    /* Hide the default nav menu and position it off-screen */
-    .nav-menu {
-        position: fixed;
-        top: 80px; /* Adjust based on your navbar height */
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 80px);
-        background: var(--white);
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 2rem;
-        transition: left 0.3s ease;
-        box-shadow: var(--shadow-lg);
-        gap: 0;
-        z-index: 999;
-        overflow-y: auto;
-    }
-    
-    /* When active class is added, slide menu into view */
-    .nav-menu.active {
-        left: 0;
-    }
-    
-    /* Style individual menu items */
-    .nav-menu li {
-        width: 100%;
-        text-align: center;
-        margin-left: 0;
-        margin-bottom: 0;
-    }
-    
-    .nav-menu a {
-        display: block;
-        padding: 1.2rem;
-        width: 100%;
-        border-bottom: 1px solid var(--gray-light);
-        font-size: 1.1rem;
-    }
-    
-    .nav-menu a:hover,
-    .nav-menu a.active {
-        background: rgba(212, 165, 116, 0.1);
-        color: var(--secondary-color);
-    }
-    
-    /* Adjust hero for mobile */
-    .hero {
-        padding: 100px 0 60px;
-        margin-top: 70px;
-    }
-    
-    .hero-title {
-        font-size: 2.2rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .btn {
-        width: 100%;
-        max-width: 250px;
-        justify-content: center;
-        margin-bottom: 10px;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-    }
-    
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .cart-sidebar {
-        width: 100%;
-        max-width: none;
-        right: -100%;
-    }
-    
-    .cart-sidebar.open {
-        right: 0;
-    }
-}
-
-/* Small mobile phones (max-width: 576px) */
-@media (max-width: 576px) {
-    .hero-title {
-        font-size: 1.8rem;
-    }
-    
-    .prop-card {
-        padding: 1.5rem;
-    }
-    
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    .logo-img {
-        height: 40px;
-    }
-    
-    .logo-text {
-        font-size: 1.5rem;
-    }
-    
-    .footer-logo-img {
-        height: 35px;
-    }
-    
-    .footer-logo-text {
-        font-size: 1.6rem;
-    }
-}
-
-/* ===== REST OF YOUR STYLES (keep all your existing styles below) ===== */
 /* ===== HERO SECTION ===== */
 .hero {
     background: linear-gradient(rgba(28, 25, 23, 0.7), rgba(28, 25, 23, 0.7)), 
@@ -939,10 +771,7 @@ a:hover {
     margin: 5px 0;
 }
 
-/* ===== CART STYLES & OTHER SECTIONS ===== */
-/* (Keep all your existing cart, about page, and other styles below this point) */
-
-/* ===== CART NOTIFICATION ===== */
+/* ===== CART STYLES ===== */
 .cart-notification {
     position: fixed;
     top: 20px;
@@ -985,7 +814,6 @@ a:hover {
     line-height: 1;
 }
 
-/* ===== CART SIDEBAR ===== */
 .cart-sidebar {
     position: fixed;
     top: 0;
